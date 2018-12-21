@@ -1,4 +1,4 @@
-# EGCO213 Project 2 GUI Program
+# EGCO213 Project 3 GUI Program
 By
    - Smanta     Thongtienchai   6013128   EGCO
    - Jirawat    Jeansuwan       6013286   EGCO
