@@ -18,6 +18,8 @@ public class MainApplication extends JFrame {
 
     }
 
+    private void start() { setVisible(false); new Game(this); }
+
     private void titleScreen() {
 
         ImagePanel panel = new ImagePanel("resource/title_text.png");
@@ -51,7 +53,7 @@ public class MainApplication extends JFrame {
 
         playButton.addMouseListener(new MouseListener() {
 
-            public void mouseClicked(MouseEvent e) { }
+            public void mouseClicked(MouseEvent e) { start(); }
 
             public void mousePressed(MouseEvent e) { }
             public void mouseReleased(MouseEvent e) { }
