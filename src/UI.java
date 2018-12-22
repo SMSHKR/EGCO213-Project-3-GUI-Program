@@ -2,19 +2,11 @@ import javax.swing.*;
 
 public class UI extends JPanel
 {
-    private ImagePanel backpack,inventory;
+    public ImageIcon backpack,inventory;
     public UI()
     {
-        backpack = new ImagePanel("resource/backpack.png");
-        backpack.setSize(50,50);
-        inventory = new ImagePanel("resource/slot_inventory.png");
-        inventory.setSize(50,50);
+        backpack = new ImageIcon("resource/backpack.png");
+        inventory = new ImageIcon("resource/slot_inventory.png");
     }
-    ImagePanel getBackpackImage()
-    {
-        return backpack;
-    }
-    ImagePanel getInventoryImage() {
-        return inventory;
-    }
+
 }
