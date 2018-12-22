@@ -33,6 +33,7 @@ public class MainApplication extends JFrame {
         remove(panel);
         panel = new ImagePanel("resource/title_house.png");
         panel.add(playButton());
+        panel.add(quitButton());
         add(panel);
         pack();
 
@@ -63,6 +64,35 @@ public class MainApplication extends JFrame {
         });
 
         return playButton;
+
+    }
+
+    private JButton quitButton() {
+
+        JButton quitButton = new JButton();
+        ImageIcon quitNormalIcon = new ImageIcon("resource/quit_normal.png");
+        ImageIcon quitFocusIcon = new ImageIcon("resource/quit_focus.png");
+
+        quitButton.setBounds(100, 200, quitNormalIcon.getIconWidth(), quitNormalIcon.getIconHeight());
+        quitButton.setIcon(quitNormalIcon);
+        quitButton.setBorderPainted(false);
+        quitButton.setFocusPainted(false);
+        quitButton.setContentAreaFilled(false);
+
+        quitButton.addMouseListener(new MouseListener() {
+
+            public void mouseClicked(MouseEvent e) { System.exit(0); }
+
+            public void mousePressed(MouseEvent e) { }
+            public void mouseReleased(MouseEvent e) { }
+
+            public void mouseEntered(MouseEvent e) { quitButton.setIcon(quitFocusIcon); }
+            public void mouseExited(MouseEvent e) { quitButton.setIcon(quitNormalIcon); }
+
+        });
+
+        return quitButton;
+
     }
 
 }
