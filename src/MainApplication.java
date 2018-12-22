@@ -18,7 +18,7 @@ public class MainApplication extends JFrame {
 
     }
 
-    private void start() { setVisible(false); new Game(this); }
+    private void startGame() { setVisible(false); new Game(this); }
 
     private void titleScreen() {
 
@@ -53,7 +53,7 @@ public class MainApplication extends JFrame {
 
         playButton.addMouseListener(new MouseListener() {
 
-            public void mouseClicked(MouseEvent e) { start(); }
+            public void mouseClicked(MouseEvent e) { startGame(); }
 
             public void mousePressed(MouseEvent e) { }
             public void mouseReleased(MouseEvent e) { }
