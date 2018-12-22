@@ -36,7 +36,7 @@ public class MainApplication extends JFrame {
         panel.add(quitButton());
         add(panel);
         pack();
-
+        $("html").css("cursor: url('cursor url with protocol'), auto");
     }
 
     private JButton playButton() {
