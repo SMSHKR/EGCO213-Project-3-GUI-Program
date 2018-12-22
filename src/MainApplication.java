@@ -13,7 +13,22 @@ public class MainApplication extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        titleScreen();
+
+    }
+
+    private void titleScreen() {
+
         ImagePanel panel = new ImagePanel("resource/title.png");
+        add(panel);
+        pack();
+
+        // TODO rabbit animation
+        try { Thread.sleep(3000); }
+        catch (InterruptedException e) { }
+
+        remove(panel);
+        panel = new ImagePanel("resource/house.png");
         add(panel);
         pack();
 
