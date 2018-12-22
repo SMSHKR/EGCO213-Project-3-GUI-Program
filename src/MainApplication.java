@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.JFrame;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class MainApplication extends JFrame {
 
@@ -39,13 +41,26 @@ public class MainApplication extends JFrame {
     private JButton playButton() {
 
         JButton playButton = new JButton();
-        ImageIcon playIcon = new ImageIcon("resource/play_normal.png");
+        ImageIcon playNormalIcon = new ImageIcon("resource/play_normal.png");
+        ImageIcon playFocusIcon = new ImageIcon("resource/play_focus.png");
 
-        playButton.setBounds(100, 100, playIcon.getIconWidth(), playIcon.getIconHeight());
-        playButton.setIcon(playIcon);
+        playButton.setBounds(100, 100, playNormalIcon.getIconWidth(), playNormalIcon.getIconHeight());
+        playButton.setIcon(playNormalIcon);
         playButton.setBorderPainted(false);
         playButton.setFocusPainted(false);
         playButton.setContentAreaFilled(false);
+
+        playButton.addMouseListener(new MouseListener() {
+
+            public void mouseClicked(MouseEvent e) { }
+
+            public void mousePressed(MouseEvent e) { }
+            public void mouseReleased(MouseEvent e) { }
+
+            public void mouseEntered(MouseEvent e) { playButton.setIcon(playFocusIcon); }
+            public void mouseExited(MouseEvent e) { playButton.setIcon(playNormalIcon); }
+
+        });
 
         return playButton;
     }
