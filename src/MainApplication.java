@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.JFrame;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -13,7 +12,6 @@ public class MainApplication extends JFrame {
         setLocation(10, 10);
         setResizable(false);
         setVisible(true);
-        //setLayout(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         titleScreen();
