@@ -23,12 +23,21 @@ public class MainApplication extends JFrame {
     private void titleScreen() {
 
         ImagePanel panel = new ImagePanel("resource/title_text.png");
+        ImageIcon [] icons = new ImageIcon[8];
+        for (int i = 0; i < 8; i++)
+            icons[i] = new ImageIcon("resource/idle" + i + ".png");
+        JLabel rabbit = new JLabel();
+        rabbit.setBounds(getWidth(), getHeight(), icons[0].getIconWidth(), icons[0].getIconHeight());
+        panel.add(rabbit);
         add(panel);
         pack();
 
-        // TODO rabbit animation
-        try { Thread.sleep(1000); }
-        catch (InterruptedException e) { }
+        for (ImageIcon icon : icons)
+            try {
+                rabbit.setIcon(icon);
+                Thread.sleep(300);
+            }
+            catch (InterruptedException e) { }
 
         remove(panel);
         panel = new ImagePanel("resource/title_house.png");
@@ -36,7 +45,7 @@ public class MainApplication extends JFrame {
         panel.add(quitButton());
         add(panel);
         pack();
-        $("html").css("cursor: url('cursor url with protocol'), auto");
+
     }
 
     private JButton playButton() {
