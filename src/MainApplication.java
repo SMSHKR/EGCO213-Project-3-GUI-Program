@@ -20,6 +20,7 @@ public class MainApplication extends JFrame {
 
     private void startGame() { setVisible(false); new Game(this); }
 
+
     private void titleScreen() {
 
         ImagePanel panel = new ImagePanel("resource/title_text.png");
@@ -36,7 +37,6 @@ public class MainApplication extends JFrame {
         panel.add(quitButton());
         add(panel);
         pack();
-        $("html").css("cursor: url('cursor url with protocol'), auto");
     }
 
     private JButton playButton() {
