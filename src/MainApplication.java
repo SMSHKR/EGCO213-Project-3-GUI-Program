@@ -19,7 +19,7 @@ public class MainApplication extends JFrame {
 
     private void titleScreen() {
 
-        ImagePanel panel = new ImagePanel("resource/title.png");
+        ImagePanel panel = new ImagePanel("resource/title_text.png");
         add(panel);
         pack();
 
@@ -28,7 +28,7 @@ public class MainApplication extends JFrame {
         catch (InterruptedException e) { }
 
         remove(panel);
-        panel = new ImagePanel("resource/house.png");
+        panel = new ImagePanel("resource/title_house.png");
         add(panel);
         pack();
 
