@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Scene_1 extends JFrame {
 
@@ -6,11 +8,14 @@ public class Scene_1 extends JFrame {
     private int rabbit_x = 0;
     private int rabbit_y = 0;
 
-    public Scene_1() {
+    public Scene_1(Game controller) {
 
         setTitle("Scene 1");
         setResizable(false);
-        setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) { controller.onClosing(); }
+        });
 
         ImagePanel background = new ImagePanel("resource/scene_1.jpg");
         JLabel rabbit = new JLabel();
@@ -20,10 +25,6 @@ public class Scene_1 extends JFrame {
         add(background);
         pack();
 
-    }
-
-    public static void main(String[] args) {
-        new Scene_1();
     }
 
 }
