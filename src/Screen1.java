@@ -7,16 +7,22 @@ public class Screen1 extends JFrame {
 
         JButton BackpackButton = new JButton();
         JPanel panel = new JPanel();
+
         setTitle("Location Name 1");
         setBackground(Color.gray);
         setLocation(10, 10);
         setResizable(false);
+
         UI ui = new UI();
+
         BackpackButton.setIcon(ui.getBackpack());
-        BackpackButton.setBounds(200, 200, 50, 50);
+        BackpackButton.setBounds(200, 200, ui.getBackpack().getIconWidth(), ui.getBackpack().getIconHeight());
+
         setBounds(0, 500, 100, 50);
         panel.add(BackpackButton);
+        panel.setLayout(null);
         panel.setBounds(800, 200, 50, 50);
+
         add(panel);
         setSize(1920, 1080);
         setVisible(true);
