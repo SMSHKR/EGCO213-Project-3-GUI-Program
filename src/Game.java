@@ -2,22 +2,21 @@ import javax.swing.*;
 
 class Game {
 
-    JFrame main;
-    JFrame scene_1;
-    JFrame scene_2;
+    JFrame [] scene = new JFrame [10];
 
-    public Game(JFrame main) {
+    Game(JFrame main) {
 
         main.setVisible(false);
 
-        this.main = main;
-        scene_1 = new Scene_1(this);
-        scene_2 = new Scene_2(this);
+        scene [0] = main;
+        scene [1] = new Scene_1(this);
+        scene [2] = new Scene_2(this);
+        scene [3] = new Scene_3(this);
 
-        scene_1.setVisible(true);
+        scene[1].setVisible(true);
 
     }
 
-    public void onClosing() { main.setVisible(true); }
+    void onClosing() { scene[0].setVisible(true); }
 
 }
