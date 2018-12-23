@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class Scene_1 extends JFrame {
+class Scene_1 extends JFrame {
 
     // TODO rabbit position
     private int rabbit_x = 0;

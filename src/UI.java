@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class UI extends JPanel {
+class UI extends JPanel {
 
     private ImageIcon backpack = new ImageIcon("resource/backpack.png");
     private ImageIcon inventory = new ImageIcon("resource/slot_inventory.png");
