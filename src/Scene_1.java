@@ -12,6 +12,9 @@ class Scene_1 extends JFrame {
 
     private Game controller;
 
+    private ImagePanel background = new ImagePanel("resource/scene_1.jpg");
+    private JLabel rabbit = new JLabel();
+
     public Scene_1(Game controller) {
 
         this.controller = controller;
@@ -23,8 +26,6 @@ class Scene_1 extends JFrame {
             public void windowClosing(WindowEvent e) { controller.onClosing(); }
         });
 
-        ImagePanel background = new ImagePanel("resource/scene_1.jpg");
-        JLabel rabbit = new JLabel();
         rabbit.setIcon(new ImageIcon("resource/idle0.png"));
         rabbit.setBounds(rabbit_x, rabbit_y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
         background.add(rabbit);
@@ -32,7 +33,6 @@ class Scene_1 extends JFrame {
         pack();
 
         background.add(arrowButton());
-        validate();
 
     }
 
@@ -64,7 +64,7 @@ class Scene_1 extends JFrame {
 
     }
 
-    private void changeScene() { controller.changeScene(this, 2); }
+    private void changeScene() { controller.changeScene(this, 2, rabbit); }
 
 }
 
