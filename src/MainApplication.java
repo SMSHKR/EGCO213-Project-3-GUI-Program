@@ -27,7 +27,10 @@ public class MainApplication extends JFrame {
         for (int i = 0; i < 8; i++)
             icons[i] = new ImageIcon("resource/idle" + i + ".png");
         JLabel rabbit = new JLabel();
+
+        // TODO Change rabbit size, location here
         rabbit.setBounds(getWidth(), getHeight(), icons[0].getIconWidth(), icons[0].getIconHeight());
+
         panel.add(rabbit);
         add(panel);
         pack();
