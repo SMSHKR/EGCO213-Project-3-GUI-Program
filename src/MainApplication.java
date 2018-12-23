@@ -14,13 +14,13 @@ public class MainApplication extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        titleScreen();
+        mainScreen();
 
     }
 
-    private void startGame() { setVisible(false); new Game(this); }
+    private void startGame() { new Game(this); }
 
-    private void titleScreen() {
+    private void mainScreen() {
 
         ImagePanel panel = new ImagePanel("resource/title_text.png");
         ImageIcon [] icons = new ImageIcon[8];
