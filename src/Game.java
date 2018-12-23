@@ -1,12 +1,16 @@
 import javax.swing.*;
 
-class Game {
+public class Game {
 
-    JFrame [] scene = new JFrame [10];
+    private JFrame [] scene = new JFrame [10];
+    private ImageIcon [] WARP = new ImageIcon [2];
 
-    Game(JFrame main) {
+    public Game(JFrame main) {
 
         main.setVisible(false);
+
+        WARP [0] = new ImageIcon("resource/warp_0.png");
+        WARP [1] = new ImageIcon("resource/warp_1.png");
 
         scene [0] = main;
         scene [1] = new Scene_1(this);
@@ -17,7 +21,25 @@ class Game {
 
     }
 
-    void changeScene(JFrame caller, int target) { caller.setVisible(false); scene[target].setVisible(true); }
+    void changeScene(JFrame caller, int target, JLabel rabbit) {
+
+        rabbit.setIcon(WARP[0]);
+        try { Thread.sleep(500); }
+        catch (InterruptedException e) { }
+
+        rabbit.setIcon(WARP[1]);
+        try { Thread.sleep(500); }
+        catch (InterruptedException e) { }
+
+        rabbit.setIcon(null);
+        try { Thread.sleep(500); }
+        catch (InterruptedException e) { }
+
+        caller.setVisible(false);
+        scene[target].setVisible(true);
+
+    }
+
     void onClosing() { scene[0].setVisible(true); }
 
 }
