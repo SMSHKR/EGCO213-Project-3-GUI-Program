@@ -10,7 +10,11 @@ class Scene_1 extends JFrame {
     private int rabbit_x = 0;
     private int rabbit_y = 0;
 
+    private Game controller;
+
     public Scene_1(Game controller) {
+
+        this.controller = controller;
 
         setTitle("Scene 1");
         setResizable(false);
@@ -46,7 +50,7 @@ class Scene_1 extends JFrame {
 
         arrowButton.addMouseListener(new MouseListener() {
 
-            public void mouseClicked(MouseEvent e) {  }
+            public void mouseClicked(MouseEvent e) { changeScene(); }
 
             public void mousePressed(MouseEvent e) { }
             public void mouseReleased(MouseEvent e) { }
@@ -59,6 +63,8 @@ class Scene_1 extends JFrame {
         return arrowButton;
 
     }
+
+    private void changeScene() { controller.changeScene(this, 2); }
 
 }
 

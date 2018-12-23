@@ -17,6 +17,7 @@ class Game {
 
     }
 
+    void changeScene(JFrame caller, int target) { caller.setVisible(false); scene[target].setVisible(true); }
     void onClosing() { scene[0].setVisible(true); }
 
 }
