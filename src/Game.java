@@ -4,7 +4,7 @@ import java.util.Timer;
 
 public class Game {
 
-    private JFrame [] scene = new JFrame [10];
+    private JFrame [] scene = new JFrame [11];
     private ImageIcon [] WARP = new ImageIcon [4];
 
     private boolean [] correct = new boolean [5];
@@ -26,6 +26,9 @@ public class Game {
         scene [5] = new Scene_5(this);
         scene [6] = new Scene_6(this);
         scene [7] = new Scene_7(this);
+        scene [8] = new Scene_8(this);
+        scene [9] = new Scene_9(this);
+        scene[10] = new Scene_10(this);
 
         scene[1].setVisible(true);
 
