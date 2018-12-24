@@ -14,8 +14,8 @@ class Scene_1 extends Scene {
     private JButton arrowButton() {
 
         JButton arrowButton = new JButton();
-        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_normal.png");
-        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_focus.png");
+        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_r_normal.png");
+        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_r_focus.png");
 
         arrowButton.setBounds(getWidth() - 300, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
         arrowButton.setIcon(arrowNormalIcon);
