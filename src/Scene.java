@@ -9,25 +9,31 @@ class Scene extends JFrame {
 
     ImagePanel background;
 
-    Scene(String name, Game controller, int x, int y) {
+    Scene(String name, Game controller) {
 
         this.controller = controller;
 
         setTitle("Scene " + name);
         setResizable(false);
 
-        rabbit.setIcon(new ImageIcon("resource/rabbit/idle.png"));
-        rabbit.setBounds(x, y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
-
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) { controller.onClosing(); }
         });
         background = new ImagePanel("resource/scene_" + name + "/scene.png");
 
-        background.add(rabbit);
-
         add(background);
         pack();
+
+    }
+
+    Scene(String name, Game controller, int x, int y) {
+
+        this(name, controller);
+
+        rabbit.setIcon(new ImageIcon("resource/rabbit/idle.png"));
+        rabbit.setBounds(x, y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
+
+        background.add(rabbit);
 
     }
 
