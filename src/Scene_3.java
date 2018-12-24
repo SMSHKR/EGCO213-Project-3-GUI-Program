@@ -58,7 +58,7 @@ class Scene_3 extends Scene {
             paper[i].setBounds(paper_x[i], paper_y[i], paperIcon[i].getIconWidth(), paperIcon[i].getIconHeight());
 
             paper[i].addMouseListener(new MouseAdapter() {
-                public void mouseClicked(MouseEvent e) { changeScene(4); }
+                public void mouseClicked(MouseEvent e) { changeScene(4, false); }
             });
 
             background.add(paper[i]);

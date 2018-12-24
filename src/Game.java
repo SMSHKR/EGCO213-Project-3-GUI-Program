@@ -25,7 +25,13 @@ public class Game {
     }
 
     private static boolean changing = false;
-    void changeScene(JFrame caller, int target, JLabel rabbit) {
+    void changeScene(JFrame caller, int target, JLabel rabbit, boolean warp) {
+
+        if (!warp) {
+            caller.setVisible(false);
+            scene[target].setVisible(true);
+            return;
+        }
 
         if (changing) return;
 

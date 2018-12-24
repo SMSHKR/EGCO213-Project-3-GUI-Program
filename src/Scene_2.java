@@ -91,7 +91,7 @@ class Scene_2 extends Scene {
 
         arrowButton.addMouseListener(new MouseListener() {
 
-            public void mouseClicked(MouseEvent e) { changeScene(3); arrowButton.removeMouseListener(this); }
+            public void mouseClicked(MouseEvent e) { changeScene(3, true); arrowButton.removeMouseListener(this); }
 
             public void mousePressed(MouseEvent e) { }
             public void mouseReleased(MouseEvent e) { }
