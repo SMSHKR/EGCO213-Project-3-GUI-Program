@@ -1,9 +1,14 @@
 import javax.swing.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Game {
 
+    private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
     private JFrame [] scene = new JFrame [10];
-    private ImageIcon [] WARP = new ImageIcon [2];
+    private ImageIcon [] WARP = new ImageIcon [3];
 
     public Game(JFrame main) {
 
@@ -11,6 +16,7 @@ public class Game {
 
         WARP [0] = new ImageIcon("resource/warp_0.png");
         WARP [1] = new ImageIcon("resource/warp_1.png");
+        WARP [2] = null;
 
         scene [0] = main;
         scene [1] = new Scene_1(this);
@@ -23,20 +29,19 @@ public class Game {
 
     void changeScene(JFrame caller, int target, JLabel rabbit) {
 
-        rabbit.setIcon(WARP[0]);
-        try { Thread.sleep(500); }
-        catch (InterruptedException e) { }
+        Thread animator = new Thread(() -> {
+            for (int i = 0; i < 3; i++) {
+                rabbit.setIcon(WARP[i]);
+                try { Thread.sleep(500); }
+                catch (InterruptedException e) { }
+            }
+        });
+        animator.start();
 
-        rabbit.setIcon(WARP[1]);
-        try { Thread.sleep(500); }
-        catch (InterruptedException e) { }
-
-        rabbit.setIcon(null);
-        try { Thread.sleep(500); }
-        catch (InterruptedException e) { }
-
-        caller.setVisible(false);
-        scene[target].setVisible(true);
+        scheduler.schedule(() -> {
+            caller.setVisible(false);
+            scene[target].setVisible(true);
+        }, 2000, TimeUnit.MILLISECONDS);
 
     }
 
