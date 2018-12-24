@@ -43,20 +43,20 @@ class Scene_4 extends Scene {
         temp = 6 + 2 * 8 - 5 * 3 + 8;
         answer [4] = String.valueOf((int) temp);
 
-        paper_x [0] = 630;
-        paper_y [0] = 530;
+        paper_x [0] = 830;
+        paper_y [0] = 330;
 
         paper_x [1] = 500;
-        paper_y [1] = 530;
+        paper_y [1] = 330;
 
         paper_x [2] = 500;
-        paper_y [2] = 600;
+        paper_y [2] = 400;
 
-        paper_x [3] = 630;
-        paper_y [3] = 600;
+        paper_x [3] = 830;
+        paper_y [3] = 400;
 
-        paper_x [4] = 570;
-        paper_y [4] = 660;
+        paper_x [4] = 670;
+        paper_y [4] = 460;
 
 
 

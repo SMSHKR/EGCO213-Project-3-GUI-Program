@@ -9,21 +9,21 @@ class Scene_2 extends Scene {
     private ImageIcon tableIcon = new ImageIcon("resource/scene_2/table_pokeball.png");
     private JLabel table = new JLabel(tableIcon);
     private int table_x = 50;
-    private int table_y = 10;
+    private int table_y = -110;
 
     private ImageIcon [] sinkIcon = new ImageIcon [2];
     private JLabel sink = new JLabel();
     private int sink_x = 250;
-    private int sink_y = 370;
+    private int sink_y = 170;
 
     private ImageIcon [] fridgeIcon = new ImageIcon [3];
     private JLabel fridge = new JLabel();
     private int fridge_x = 0;
-    private int fridge_y = 450;
+    private int fridge_y = 350;
 
     Scene_2(Game controller) {
 
-        super("2", controller, 100, 600);
+        super("2", controller, 830, 343);
 
         background.add(leftArrowButton(3, true));
         background.add(rightArrowButton(1, true));
