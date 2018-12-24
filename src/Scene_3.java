@@ -39,6 +39,8 @@ class Scene_3 extends Scene {
         book.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) { background.remove(book); }
         });
+        book.setVisible(false);
+        background.add(book);
 
         unknownIcon [0] = new ImageIcon("resource/scene_3/unknown_0.png");
         unknownIcon [1] = new ImageIcon("resource/scene_3/unknown_1.png");
@@ -49,7 +51,7 @@ class Scene_3 extends Scene {
             public void mouseClicked(MouseEvent e) {
                 unknown.setIcon(unknownIcon[1]);
                 if (!bounced) {
-                    background.add(book);
+                    book.setVisible(true);
                     bounced = true;
                 }
             }
