@@ -26,15 +26,15 @@ class Scene_9 extends Scene {
         background.add(chkBox5);
 
         if(controller.getCorrect(0) == true)
-            chkBox1.setSelected(true);
+            chkBox1.setSelected(controller.getCorrect(0));
         if(controller.getCorrect(1) == true)
-            chkBox2.setSelected(true);
+            chkBox2.setSelected(controller.getCorrect(1));
         if(controller.getCorrect(2) == true)
-            chkBox3.setSelected(true);
+            chkBox3.setSelected(controller.getCorrect(2));
         if(controller.getCorrect(3) == true)
-            chkBox4.setSelected(true);
+            chkBox4.setSelected(controller.getCorrect(3));
         if(controller.getCorrect(4) == true)
-            chkBox5.setSelected(true);
+            chkBox5.setSelected(controller.getCorrect(4));
 
         background.add(rightArrowButton(8, true));
         int mistake=0;
