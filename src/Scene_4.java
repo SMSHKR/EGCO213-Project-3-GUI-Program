@@ -80,7 +80,7 @@ class Scene_4 extends Scene {
 
         jlist.setBounds(60,60,100,200);
         background.add(jlist);
-        addKeyListener(new KeyAdapter() {
+        jlist.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 if (e.getKeyChar() == 'e') changeScene(3, false);
             }
