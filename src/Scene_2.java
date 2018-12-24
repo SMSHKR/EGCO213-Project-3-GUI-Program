@@ -12,6 +12,11 @@ class Scene_2 extends Scene {
     private int sink_x = -50;
     private int sink_y = -10;
 
+    private ImageIcon [] fridgeIcon = new ImageIcon [3];
+    private JLabel fridge = new JLabel();
+    private int fridge_x = -50;
+    private int fridge_y = 0;
+
     Scene_2(Game controller) {
 
         super("2", controller, 0, 0);
@@ -19,13 +24,20 @@ class Scene_2 extends Scene {
         table.setIcon(tableIcon);
         table.setBounds(table_x, table_y, tableIcon.getIconWidth(), tableIcon.getIconHeight());
 
-        sinkIcon[0] = new ImageIcon("resource/sink_0.png");
-        sinkIcon[1] = new ImageIcon("resource/sink_1.png");
+        sinkIcon [0] = new ImageIcon("resource/sink_0.png");
+        sinkIcon [1] = new ImageIcon("resource/sink_1.png");
         sink.setIcon(sinkIcon[0]);
         sink.setBounds(sink_x, sink_y, sinkIcon[0].getIconWidth(), sinkIcon[0].getIconHeight());
 
+        fridgeIcon [0] = new ImageIcon("resource/fridge_0.png");
+        fridgeIcon [1] = new ImageIcon("resource/fridge_1.png");
+        fridgeIcon [2] = new ImageIcon("resource/fridge_2.png");
+        fridge.setIcon(fridgeIcon[0]);
+        fridge.setBounds(fridge_x, fridge_y, fridgeIcon[0].getIconWidth(), fridgeIcon[0].getIconHeight());
+
         background.add(table);
         background.add(sink);
+        background.add(fridge);
 
     }
 
