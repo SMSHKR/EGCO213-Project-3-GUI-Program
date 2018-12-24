@@ -12,8 +12,9 @@ class Scene_3 extends Scene {
     private boolean bounced = false;
     private ImageIcon bookIcon = new ImageIcon("resource/scene_3/dustybook.png");
     private JLabel book = new JLabel(bookIcon);
-    private int book_x = 300;
-    private int book_y = 300;
+    private int book_x = 830;
+    private int book_y = 550;
+    
 
     private ImageIcon [] unknownIcon = new ImageIcon [2];
     private JLabel unknown = new JLabel();
