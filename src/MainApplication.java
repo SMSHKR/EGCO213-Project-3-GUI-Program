@@ -29,7 +29,7 @@ public class MainApplication extends JFrame {
         JLabel rabbit = new JLabel();
 
         // TODO Change rabbit size, location here
-        rabbit.setBounds(getWidth(), getHeight(), icons[0].getIconWidth(), icons[0].getIconHeight());
+        rabbit.setBounds(getWidth()+450, getHeight()+600, icons[0].getIconWidth(), icons[0].getIconHeight());
 
         panel.add(rabbit);
         add(panel);
