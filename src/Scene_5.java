@@ -4,6 +4,9 @@ class Scene_5 extends Scene {
 
         super("5", controller, 0, 0);
 
+        background.add(rightArrowButton(3, true));
+        background.add(leftArrowButton(6, true));
+
     }
 
 }
