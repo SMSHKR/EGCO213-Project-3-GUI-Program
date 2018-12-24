@@ -1,4 +1,8 @@
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 
 class Scene_2 extends Scene {
 
@@ -28,6 +32,22 @@ class Scene_2 extends Scene {
         sinkIcon [1] = new ImageIcon("resource/sink_1.png");
         sink.setIcon(sinkIcon[0]);
         sink.setBounds(sink_x, sink_y, sinkIcon[0].getIconWidth(), sinkIcon[0].getIconHeight());
+
+        sink.addMouseListener(new MouseAdapter() {
+            private boolean finished = true;
+            public void mouseClicked(MouseEvent e) {
+                if (!finished) { return; }
+                finished = false;
+                sink.setIcon(sinkIcon[1]);
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    public void run() {
+                        sink.setIcon(sinkIcon[0]);
+                        finished = true;
+                    }
+                }, 2000);
+            }
+        });
 
         fridgeIcon [0] = new ImageIcon("resource/fridge_0.png");
         fridgeIcon [1] = new ImageIcon("resource/fridge_1.png");

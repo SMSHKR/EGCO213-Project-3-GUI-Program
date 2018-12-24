@@ -1,11 +1,8 @@
 import javax.swing.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.TimerTask;
+import java.util.Timer;
 
 public class Game {
-
-    private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
     private JFrame [] scene = new JFrame [10];
     private ImageIcon [] WARP = new ImageIcon [3];
@@ -30,18 +27,21 @@ public class Game {
     void changeScene(JFrame caller, int target, JLabel rabbit) {
 
         Thread animator = new Thread(() -> {
-            for (int i = 0; i < 3; i++) {
-                rabbit.setIcon(WARP[i]);
+            for (ImageIcon warpIcon : WARP) {
+                rabbit.setIcon(warpIcon);
                 try { Thread.sleep(500); }
                 catch (InterruptedException e) { }
             }
         });
         animator.start();
 
-        scheduler.schedule(() -> {
-            caller.setVisible(false);
-            scene[target].setVisible(true);
-        }, 2000, TimeUnit.MILLISECONDS);
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+                caller.setVisible(false);
+                scene[target].setVisible(true);
+            }
+        }, WARP.length * 500);
 
     }
 
