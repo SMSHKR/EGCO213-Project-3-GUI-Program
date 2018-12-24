@@ -24,6 +24,7 @@ public class Game {
         scene [3] = new Scene_3(this);
         scene [4] = new Scene_4(this);
         scene [5] = new Scene_5(this);
+        scene [6] = new Scene_6(this);
 
         scene[1].setVisible(true);
 
