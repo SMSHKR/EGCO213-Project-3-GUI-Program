@@ -8,18 +8,18 @@ class Scene_2 extends Scene {
 
     private ImageIcon tableIcon = new ImageIcon("resource/table_pokeball.png");
     private JLabel table = new JLabel(tableIcon);
-    private int table_x = 10;
+    private int table_x = 50;
     private int table_y = 10;
 
     private ImageIcon [] sinkIcon = new ImageIcon [2];
     private JLabel sink = new JLabel();
-    private int sink_x = -50;
-    private int sink_y = -10;
+    private int sink_x = 250;
+    private int sink_y = 370;
 
     private ImageIcon [] fridgeIcon = new ImageIcon [3];
     private JLabel fridge = new JLabel();
-    private int fridge_x = -50;
-    private int fridge_y = 0;
+    private int fridge_x = 0;
+    private int fridge_y = 450;
 
     Scene_2(Game controller) {
 
