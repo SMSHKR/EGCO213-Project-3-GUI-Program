@@ -7,6 +7,8 @@ public class Game {
     private JFrame [] scene = new JFrame [10];
     private ImageIcon [] WARP = new ImageIcon [3];
 
+    private boolean [] correct = new boolean [5];
+
     public Game(JFrame main) {
 
         main.setVisible(false);
@@ -24,6 +26,8 @@ public class Game {
         scene[1].setVisible(true);
 
     }
+
+    void answer(int index, boolean ans) { correct [index] = ans; }
 
     private static boolean changing = false;
     void changeScene(JFrame caller, int target, JLabel rabbit, boolean warp) {
