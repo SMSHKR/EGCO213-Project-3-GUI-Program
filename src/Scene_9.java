@@ -26,16 +26,16 @@ class Scene_9 extends Scene {
         background.add(chkBox5);
 
         if(controller.getCorrect(0) == true)
-            chkBox1.setSelected(controller.getCorrect(0));
+            chkBox1.setSelected(true);
         if(controller.getCorrect(1) == true)
-            chkBox2.setSelected(controller.getCorrect(1));
+            chkBox2.setSelected(true);
         if(controller.getCorrect(2) == true)
-            chkBox3.setSelected(controller.getCorrect(2));
+            chkBox3.setSelected(true);
         if(controller.getCorrect(3) == true)
-            chkBox4.setSelected(controller.getCorrect(3));
+            chkBox4.setSelected(true);
         if(controller.getCorrect(4) == true)
-            chkBox5.setSelected(controller.getCorrect(4));
-
+            chkBox5.setSelected(true);
+        validate();
         background.add(rightArrowButton(8, true));
         int mistake=0;
         for (int i = 0; i < 5; i++) {
@@ -47,6 +47,7 @@ class Scene_9 extends Scene {
 
         if(mistake>2)
         if(mistake<3)background.add(leftArrowButton(10, true));
+        background.add(leftArrowButton(10, true));
     }
 
 }
