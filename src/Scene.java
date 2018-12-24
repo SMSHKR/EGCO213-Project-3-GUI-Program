@@ -31,6 +31,6 @@ class Scene extends JFrame {
 
     }
 
-    void changeScene() { controller.changeScene(this, 2, rabbit); }
+    void changeScene(int target) { controller.changeScene(this, target, rabbit); }
 
 }
