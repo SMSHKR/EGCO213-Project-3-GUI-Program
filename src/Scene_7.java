@@ -9,7 +9,7 @@ class Scene_7 extends Scene {
     private JRadioButton radioButton3 = new JRadioButton("82");
     private JButton startButton = new JButton("Start");
     private ButtonGroup group = new ButtonGroup();
-
+    ImagePanel backgrounds;
     Scene_7(Game controller) {
         super("7", controller, 0, 0);
         background.add(startButton);
@@ -29,17 +29,27 @@ class Scene_7 extends Scene {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(radioButton1.isSelected())
-                {}
+                {System.out.print("a");
+                    backgrounds = new ImagePanel("resource/scene_7/1.gif");
+                add(backgrounds);pack();
+                    changeScene(7,true);
+                }
                 if(radioButton2.isSelected())
-                {}
+                {backgrounds = new ImagePanel("resource/scene_7/55.gif");
+                    add(backgrounds);pack();
+                    changeScene(7,true);
+                }
                 if(radioButton3.isSelected())
-                {}
+                {backgrounds = new ImagePanel("resource/scene_7/82.gif");
+                    add(backgrounds);pack();
+changeScene(8,true);
+                }
             }
         });
         startButton.setBounds(20,450,120,50);
 
         background.add(rightArrowButton(6, true));
-        background.add(leftArrowButton(8, true));
+
 
 
 
