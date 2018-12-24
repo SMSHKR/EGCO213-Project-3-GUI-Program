@@ -1,11 +1,7 @@
 import javax.swing.*;
-import java.awt.event.ActionListener;
-import java.util.Timer;
-import java.util.TimerTask;
 
-public class Game{
-    Timer timer;
-    TimerTask task;
+public class Game {
+
     private JFrame [] scene = new JFrame [10];
     private ImageIcon [] WARP = new ImageIcon [2];
 
@@ -27,28 +23,21 @@ public class Game{
 
     void changeScene(JFrame caller, int target, JLabel rabbit) {
 
-        timer = new Timer();
-        task = new TimerTask() {
-            @Override
-            public void run() {
-                rabbit.setIcon(WARP[0]);
-                rabbit.setIcon(WARP[1]);
-                rabbit.setIcon(null);
-                System.out.print("Test");
+        rabbit.setIcon(WARP[0]);
+        try { Thread.sleep(500); }
+        catch (InterruptedException e) { }
 
-            }
+        rabbit.setIcon(WARP[1]);
+        try { Thread.sleep(500); }
+        catch (InterruptedException e) { }
 
-
-        };
+        rabbit.setIcon(null);
+        try { Thread.sleep(500); }
+        catch (InterruptedException e) { }
 
         caller.setVisible(false);
         scene[target].setVisible(true);
 
-
-    }
-    public void start()
-    {
-        timer.scheduleAtFixedRate(task, 500, 500);
     }
 
     void onClosing() { scene[0].setVisible(true); }
