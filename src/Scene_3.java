@@ -9,6 +9,12 @@ class Scene_3 extends Scene {
     private int table_x = 50;
     private int table_y = 10;
 
+    private boolean bounced = false;
+    private ImageIcon bookIcon = new ImageIcon("resource/scene_3/dustybook.png");
+    private JLabel book = new JLabel(bookIcon);
+    private int book_x = 300;
+    private int book_y = 300;
+
     private ImageIcon [] unknownIcon = new ImageIcon [2];
     private JLabel unknown = new JLabel();
     private int unknown_x = 0;
@@ -23,8 +29,12 @@ class Scene_3 extends Scene {
 
         super("3", controller, 0, 0);
 
-        table.setIcon(tableIcon);
         table.setBounds(table_x, table_y, tableIcon.getIconWidth(), tableIcon.getIconHeight());
+
+        book.setBounds(book_x, book_y, bookIcon.getIconWidth(), bookIcon.getIconHeight());
+        book.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) { background.remove(book); }
+        });
 
         unknownIcon [0] = new ImageIcon("resource/scene_3/unknown_0.png");
         unknownIcon [1] = new ImageIcon("resource/scene_3/unknown_1.png");
@@ -32,7 +42,13 @@ class Scene_3 extends Scene {
         unknown.setBounds(unknown_x, unknown_y, unknownIcon[0].getIconWidth(), unknownIcon[0].getIconHeight());
 
         unknown.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) { unknown.setIcon(unknownIcon[1]); }
+            public void mouseClicked(MouseEvent e) {
+                unknown.setIcon(unknownIcon[1]);
+                if (!bounced) {
+                    background.add(book);
+                    bounced = true;
+                }
+            }
             public void mouseExited(MouseEvent e) { unknown.setIcon(unknownIcon[0]); }
         });
 
