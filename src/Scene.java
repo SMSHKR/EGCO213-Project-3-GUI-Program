@@ -16,13 +16,13 @@ class Scene extends JFrame {
         setTitle("Scene " + name);
         setResizable(false);
 
-        rabbit.setIcon(new ImageIcon("resource/idle.png"));
+        rabbit.setIcon(new ImageIcon("resource/rabbit/idle.png"));
         rabbit.setBounds(x, y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
 
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) { controller.onClosing(); }
         });
-        background = new ImagePanel("resource/scene_" + name + ".png");
+        background = new ImagePanel("resource/scene_" + name + "/scene.png");
 
         background.add(rabbit);
 

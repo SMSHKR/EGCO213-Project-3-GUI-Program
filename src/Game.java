@@ -11,8 +11,8 @@ public class Game {
 
         main.setVisible(false);
 
-        WARP [0] = new ImageIcon("resource/warp_0.png");
-        WARP [1] = new ImageIcon("resource/warp_1.png");
+        WARP [0] = new ImageIcon("resource/rabbit/warp_0.png");
+        WARP [1] = new ImageIcon("resource/rabbit/warp_1.png");
         WARP [2] = null;
 
         scene [0] = main;

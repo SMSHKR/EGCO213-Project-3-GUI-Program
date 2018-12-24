@@ -7,7 +7,7 @@ import java.util.TimerTask;
 
 class Scene_2 extends Scene {
 
-    private ImageIcon tableIcon = new ImageIcon("resource/table_pokeball.png");
+    private ImageIcon tableIcon = new ImageIcon("resource/scene_2/table_pokeball.png");
     private JLabel table = new JLabel(tableIcon);
     private int table_x = 50;
     private int table_y = 10;
@@ -29,8 +29,8 @@ class Scene_2 extends Scene {
         table.setIcon(tableIcon);
         table.setBounds(table_x, table_y, tableIcon.getIconWidth(), tableIcon.getIconHeight());
 
-        sinkIcon [0] = new ImageIcon("resource/sink_0.png");
-        sinkIcon [1] = new ImageIcon("resource/sink_1.png");
+        sinkIcon [0] = new ImageIcon("resource/scene_2/sink_0.png");
+        sinkIcon [1] = new ImageIcon("resource/scene_2/sink_1.png");
         sink.setIcon(sinkIcon[0]);
         sink.setBounds(sink_x, sink_y, sinkIcon[0].getIconWidth(), sinkIcon[0].getIconHeight());
 
@@ -50,9 +50,9 @@ class Scene_2 extends Scene {
             }
         });
 
-        fridgeIcon [0] = new ImageIcon("resource/fridge_0.png");
-        fridgeIcon [1] = new ImageIcon("resource/fridge_1.png");
-        fridgeIcon [2] = new ImageIcon("resource/fridge_2.png");
+        fridgeIcon [0] = new ImageIcon("resource/scene_2/fridge_0.png");
+        fridgeIcon [1] = new ImageIcon("resource/scene_2/fridge_1.png");
+        fridgeIcon [2] = new ImageIcon("resource/scene_2/fridge_2.png");
         fridge.setIcon(fridgeIcon[0]);
         fridge.setBounds(fridge_x, fridge_y, fridgeIcon[0].getIconWidth(), fridgeIcon[0].getIconHeight());
 
