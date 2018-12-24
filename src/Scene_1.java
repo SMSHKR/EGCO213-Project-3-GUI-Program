@@ -1,37 +1,12 @@
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
-class Scene_1 extends JFrame {
+class Scene_1 extends Scene {
 
-    // TODO rabbit position
-    private int rabbit_x = 0;
-    private int rabbit_y = 0;
+    Scene_1(Game controller) {
 
-    private Game controller;
-
-    private ImagePanel background = new ImagePanel("resource/scene_1.jpg");
-    private JLabel rabbit = new JLabel();
-
-    public Scene_1(Game controller) {
-
-        this.controller = controller;
-
-        setTitle("Scene 1");
-        setResizable(false);
-
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) { controller.onClosing(); }
-        });
-
-        rabbit.setIcon(new ImageIcon("resource/idle.png"));
-        rabbit.setBounds(rabbit_x, rabbit_y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
-        background.add(rabbit);
-        add(background);
-        pack();
-
+        super("1", controller, 0, 0);
         background.add(arrowButton());
 
     }
@@ -63,8 +38,6 @@ class Scene_1 extends JFrame {
         return arrowButton;
 
     }
-
-    private void changeScene() { controller.changeScene(this, 2, rabbit); }
 
 }
 
