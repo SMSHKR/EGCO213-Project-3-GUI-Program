@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -64,13 +66,19 @@ class Scene_4 extends Scene {
             paper[i].addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
                     String input = JOptionPane.showInputDialog(question[index]);
-                    controller.answer(index, input.equals(answer[index]));
+                    if (input != null) controller.answer(index, input.equals(answer[index]));
                 }
             });
 
             background.add(paper[i]);
 
         }
+
+        addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == 'e') changeScene(3, false);
+            }
+        });
 
     }
 
