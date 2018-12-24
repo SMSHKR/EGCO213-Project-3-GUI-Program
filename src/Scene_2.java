@@ -23,7 +23,7 @@ class Scene_2 extends Scene {
 
     Scene_2(Game controller) {
 
-        super("2", controller, 0, 0);
+        super("2", controller, 100, 600);
 
         table.setIcon(tableIcon);
         table.setBounds(table_x, table_y, tableIcon.getIconWidth(), tableIcon.getIconHeight());
