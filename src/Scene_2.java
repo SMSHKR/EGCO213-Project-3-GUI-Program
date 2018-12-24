@@ -55,6 +55,19 @@ class Scene_2 extends Scene {
         fridge.setIcon(fridgeIcon[0]);
         fridge.setBounds(fridge_x, fridge_y, fridgeIcon[0].getIconWidth(), fridgeIcon[0].getIconHeight());
 
+        fridge.addMouseListener(new MouseAdapter() {
+            private boolean opened = false;
+            public void mouseClicked(MouseEvent e) { fridge.setIcon(fridgeIcon[2]); opened = true; }
+            public void mouseExited(MouseEvent e) {
+                if (!opened) return;
+                fridge.setIcon(fridgeIcon[1]);
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    public void run() { fridge.setIcon(fridgeIcon[0]); opened = false; }
+                }, 300);
+            }
+        });
+
         background.add(table);
         background.add(sink);
         background.add(fridge);
