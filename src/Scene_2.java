@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -71,6 +72,36 @@ class Scene_2 extends Scene {
         background.add(table);
         background.add(sink);
         background.add(fridge);
+
+        background.add(arrowButton());
+
+    }
+
+    private JButton arrowButton() {
+
+        JButton arrowButton = new JButton();
+        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_l_normal.png");
+        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_l_focus.png");
+
+        arrowButton.setBounds(50, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
+        arrowButton.setIcon(arrowNormalIcon);
+        arrowButton.setBorderPainted(false);
+        arrowButton.setFocusPainted(false);
+        arrowButton.setContentAreaFilled(false);
+
+        arrowButton.addMouseListener(new MouseListener() {
+
+            public void mouseClicked(MouseEvent e) { changeScene(3); arrowButton.removeMouseListener(this); }
+
+            public void mousePressed(MouseEvent e) { }
+            public void mouseReleased(MouseEvent e) { }
+
+            public void mouseEntered(MouseEvent e) { arrowButton.setIcon(arrowFocusIcon); arrowButton.setSize(arrowFocusIcon.getIconWidth(), arrowFocusIcon.getIconHeight()); }
+            public void mouseExited(MouseEvent e) { arrowButton.setIcon(arrowNormalIcon); arrowButton.setSize(arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight()); }
+
+        });
+
+        return arrowButton;
 
     }
 
