@@ -25,6 +25,9 @@ class Scene_2 extends Scene {
 
         super("2", controller, 100, 600);
 
+        background.add(leftArrowButton(3, true));
+        background.add(rightArrowButton(1, true));
+
         table.setIcon(tableIcon);
         table.setBounds(table_x, table_y, tableIcon.getIconWidth(), tableIcon.getIconHeight());
 
@@ -71,8 +74,6 @@ class Scene_2 extends Scene {
         background.add(table);
         background.add(sink);
         background.add(fridge);
-
-        background.add(leftArrowButton(3, true));
 
     }
 

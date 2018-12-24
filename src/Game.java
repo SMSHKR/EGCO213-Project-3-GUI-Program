@@ -5,7 +5,7 @@ import java.util.Timer;
 public class Game {
 
     private JFrame [] scene = new JFrame [10];
-    private ImageIcon [] WARP = new ImageIcon [3];
+    private ImageIcon [] WARP = new ImageIcon [4];
 
     private boolean [] correct = new boolean [5];
 
@@ -16,6 +16,7 @@ public class Game {
         WARP [0] = new ImageIcon("resource/rabbit/warp_0.png");
         WARP [1] = new ImageIcon("resource/rabbit/warp_1.png");
         WARP [2] = null;
+        WARP [3] = new ImageIcon("resource/rabbit/idle.png");
 
         scene [0] = main;
         scene [1] = new Scene_1(this);
@@ -59,7 +60,7 @@ public class Game {
                 scene[target].setVisible(true);
                 changing = false;
             }
-        }, WARP.length * 500);
+        }, (WARP.length - 1) * 500);
 
     }
 

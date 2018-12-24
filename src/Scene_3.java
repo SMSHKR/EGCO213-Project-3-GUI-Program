@@ -30,6 +30,9 @@ class Scene_3 extends Scene {
 
         super("3", controller, 60, 550);
 
+        background.add(leftArrowButton(5, true));
+        background.add(rightArrowButton(2, true));
+
         table.setBounds(table_x, table_y, tableIcon.getIconWidth(), tableIcon.getIconHeight());
 
         book.setBounds(book_x, book_y, bookIcon.getIconWidth(), bookIcon.getIconHeight());
@@ -84,7 +87,6 @@ class Scene_3 extends Scene {
 
         background.add(table);
         background.add(unknown);
-        background.add(leftArrowButton(5, true));
 
     }
 
