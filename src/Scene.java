@@ -31,8 +31,9 @@ class Scene extends JFrame {
     Scene(String name, Game controller, int x, int y) {
 
         this(name, controller);
-
-        rabbit.setIcon(new ImageIcon("resource/rabbit/idle.png"));
+        int nn=Integer.parseInt(name);
+        if(nn==6)rabbit.setIcon(new ImageIcon("resource/rabbit/idle_4.png"));      //edit
+        else rabbit.setIcon(new ImageIcon("resource/rabbit/idle.png"));           //edit
         rabbit.setBounds(x, y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
 
         background.add(rabbit);

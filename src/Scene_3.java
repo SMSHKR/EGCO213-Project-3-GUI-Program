@@ -6,20 +6,20 @@ class Scene_3 extends Scene {
 
     private ImageIcon tableIcon = new ImageIcon("resource/scene_3/table.png");
     private JLabel table = new JLabel(tableIcon);
-    private int table_x = 250;
-    private int table_y = 500;
+    private int table_x = 350;
+    private int table_y = 300;
 
     private boolean bounced = false;
     private ImageIcon bookIcon = new ImageIcon("resource/scene_3/dustybook.png");
     private JLabel book = new JLabel(bookIcon);
-    private int book_x = 830;
-    private int book_y = 550;
+    private int book_x = 930;
+    private int book_y = 350;
 
 
     private ImageIcon [] unknownIcon = new ImageIcon [2];
     private JLabel unknown = new JLabel();
-    private int unknown_x = 750;
-    private int unknown_y = 500;
+    private int unknown_x = 850;
+    private int unknown_y = 300;
 
     private ImageIcon [] paperIcon = new ImageIcon [5];
     private JLabel [] paper = new JLabel [5];
@@ -28,7 +28,7 @@ class Scene_3 extends Scene {
 
     Scene_3(Game controller) {
 
-        super("3", controller, 60, 550);
+        super("3", controller, 160, 450);
 
         background.add(leftArrowButton(5, true));
         background.add(rightArrowButton(2, true));
@@ -58,20 +58,20 @@ class Scene_3 extends Scene {
             public void mouseExited(MouseEvent e) { unknown.setIcon(unknownIcon[0]); }
         });
 
-        paper_x [0] = 630;
-        paper_y [0] = 530;
+        paper_x [0] = 730;
+        paper_y [0] = 330;
 
-        paper_x [1] = 500;
-        paper_y [1] = 530;
+        paper_x [1] = 600;
+        paper_y [1] = 330;
 
-        paper_x [2] = 500;
-        paper_y [2] = 600;
+        paper_x [2] = 600;
+        paper_y [2] = 400;
 
-        paper_x [3] = 630;
-        paper_y [3] = 600;
+        paper_x [3] = 730;
+        paper_y [3] = 400;
 
-        paper_x [4] = 570;
-        paper_y [4] = 660;
+        paper_x [4] = 670;
+        paper_y [4] = 460;
 
         for (int i = 0; i < 5; i++) {
 
