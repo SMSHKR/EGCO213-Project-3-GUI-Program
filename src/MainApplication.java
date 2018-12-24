@@ -8,7 +8,7 @@ public class MainApplication extends JFrame {
 
     public MainApplication() {
 
-        setTitle("Placeholder");
+        setTitle("Turn Around Rabbit");
         setLocation(10, 10);
         setResizable(false);
         setVisible(true);

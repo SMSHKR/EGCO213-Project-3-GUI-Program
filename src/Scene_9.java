@@ -1,5 +1,5 @@
 class Scene_9 extends Scene {
-private boolean bad=true;
+    private boolean bad=true;
     private MySoundEffect song1,song2;
     Scene_9(Game controller) {
 
@@ -7,12 +7,11 @@ private boolean bad=true;
 
         background.add(rightArrowButton(8, true));
 
-for(int i=0;i<5;i++){
-    if(false==controller.getCorrect(i)){
-       bad=false;
-    }
-
-}
+        for (int i = 0; i < 5; i++) {
+            if (false == controller.getCorrect(i)) {
+                bad = false;
+            }
+        }
 
     }
 
