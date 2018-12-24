@@ -24,7 +24,12 @@ public class Game {
 
     }
 
+    private static boolean changing = false;
     void changeScene(JFrame caller, int target, JLabel rabbit) {
+
+        if (changing) return;
+
+        changing = true;
 
         Thread animator = new Thread(() -> {
             for (ImageIcon warpIcon : WARP) {
@@ -40,6 +45,7 @@ public class Game {
             public void run() {
                 caller.setVisible(false);
                 scene[target].setVisible(true);
+                changing = false;
             }
         }, WARP.length * 500);
 
