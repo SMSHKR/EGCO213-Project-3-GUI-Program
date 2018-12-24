@@ -35,7 +35,7 @@ public class Game {
     }
 
     void answer(int index, boolean ans) { correct [index] = ans ;}
-    boolean getCorrect(int index)       { return  correct[index];}
+    public boolean getCorrect(int index){ return  correct[index];}
 
     private static boolean changing = false;
     void changeScene(JFrame caller, int target, JLabel rabbit, boolean warp) {
