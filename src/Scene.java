@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -38,5 +40,61 @@ class Scene extends JFrame {
     }
 
     void changeScene(int target, boolean warp) { controller.changeScene(this, target, rabbit, warp); }
+
+    JButton rightArrowButton(int target, boolean warp) {
+
+        JButton arrowButton = new JButton();
+        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_r_normal.png");
+        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_r_focus.png");
+
+        arrowButton.setBounds(getWidth() - 300, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
+        arrowButton.setIcon(arrowNormalIcon);
+        arrowButton.setBorderPainted(false);
+        arrowButton.setFocusPainted(false);
+        arrowButton.setContentAreaFilled(false);
+
+        arrowButton.addMouseListener(new MouseListener() {
+
+            public void mouseClicked(MouseEvent e) { changeScene(target, warp); }
+
+            public void mousePressed(MouseEvent e) { }
+            public void mouseReleased(MouseEvent e) { }
+
+            public void mouseEntered(MouseEvent e) { arrowButton.setIcon(arrowFocusIcon); arrowButton.setSize(arrowFocusIcon.getIconWidth(), arrowFocusIcon.getIconHeight()); }
+            public void mouseExited(MouseEvent e) { arrowButton.setIcon(arrowNormalIcon); arrowButton.setSize(arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight()); }
+
+        });
+
+        return arrowButton;
+
+    }
+
+    JButton leftArrowButton(int target, boolean warp) {
+
+        JButton arrowButton = new JButton();
+        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_l_normal.png");
+        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_l_focus.png");
+
+        arrowButton.setBounds(50, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
+        arrowButton.setIcon(arrowNormalIcon);
+        arrowButton.setBorderPainted(false);
+        arrowButton.setFocusPainted(false);
+        arrowButton.setContentAreaFilled(false);
+
+        arrowButton.addMouseListener(new MouseListener() {
+
+            public void mouseClicked(MouseEvent e) { changeScene(target, warp); }
+
+            public void mousePressed(MouseEvent e) { }
+            public void mouseReleased(MouseEvent e) { }
+
+            public void mouseEntered(MouseEvent e) { arrowButton.setIcon(arrowFocusIcon); arrowButton.setSize(arrowFocusIcon.getIconWidth(), arrowFocusIcon.getIconHeight()); }
+            public void mouseExited(MouseEvent e) { arrowButton.setIcon(arrowNormalIcon); arrowButton.setSize(arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight()); }
+
+        });
+
+        return arrowButton;
+
+    }
 
 }
