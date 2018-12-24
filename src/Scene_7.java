@@ -17,9 +17,9 @@ class Scene_7 extends Scene {
         background.add(radioButton2);
         background.add(radioButton3);
 
-        radioButton1.setBounds(20,20,60,60);
-        radioButton2.setBounds(20,30,60,60);
-        radioButton3.setBounds(20,40,60, 60);
+        radioButton1.setBounds(20,300,50,20);
+        radioButton2.setBounds(20,330,50,20);
+        radioButton3.setBounds(20,360,50, 20);
 
         group.add(radioButton1);
         group.add(radioButton2);
@@ -28,10 +28,15 @@ class Scene_7 extends Scene {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if(radioButton1.isSelected())
+                {}
+                if(radioButton2.isSelected())
+                {}
+                if(radioButton3.isSelected())
+                {}
             }
         });
-        startButton.setBounds(20,60,20,20);
+        startButton.setBounds(20,450,120,50);
 
         background.add(rightArrowButton(6, true));
         background.add(leftArrowButton(8, true));
