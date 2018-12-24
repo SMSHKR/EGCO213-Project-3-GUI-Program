@@ -26,7 +26,7 @@ class Scene_1 extends JFrame {
             public void windowClosing(WindowEvent e) { controller.onClosing(); }
         });
 
-        rabbit.setIcon(new ImageIcon("resource/idle0.png"));
+        rabbit.setIcon(new ImageIcon("resource/idle.png"));
         rabbit.setBounds(rabbit_x, rabbit_y, rabbit.getIcon().getIconWidth(), rabbit.getIcon().getIconHeight());
         background.add(rabbit);
         add(background);
@@ -39,8 +39,8 @@ class Scene_1 extends JFrame {
     private JButton arrowButton() {
 
         JButton arrowButton = new JButton();
-        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow1.png");
-        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow2.png");
+        ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_normal.png");
+        ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_focus.png");
 
         arrowButton.setBounds(getWidth() - 300, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
         arrowButton.setIcon(arrowNormalIcon);
