@@ -6,9 +6,9 @@ import java.awt.event.WindowEvent;
 
 class Scene extends JFrame {
 
-    private Game controller;
     private JLabel rabbit = new JLabel();
 
+    Game controller;
     ImagePanel background;
 
     Scene(String name, Game controller) {

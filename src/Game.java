@@ -34,11 +34,16 @@ public class Game {
 
     }
 
-    void answer(int index, boolean ans) { correct [index] = ans ;}
-    public boolean getCorrect(int index){ return  correct[index];}
+    void answer(int index, boolean ans) { correct [index] = ans; }
+    boolean getCorrect(int index) { return correct[index]; }
 
     private static boolean changing = false;
     void changeScene(JFrame caller, int target, JLabel rabbit, boolean warp) {
+
+        if (target == 9) {
+            Scene_9 temp = (Scene_9) scene[9];
+            temp.updateCheckBox();
+        }
 
         if (!warp) {
             caller.setVisible(false);
