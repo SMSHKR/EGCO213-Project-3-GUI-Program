@@ -4,8 +4,6 @@ class Scene_10 extends Scene {
 
         super("10", controller, 0, -400);
 
-        background.add(rightArrowButton(8, true));
-
     }
 
 }

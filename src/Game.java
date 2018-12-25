@@ -43,6 +43,7 @@ public class Game {
         if (target == 9) {
             Scene_9 temp = (Scene_9) scene[9];
             temp.updateCheckBox();
+            temp.addArrowButton();
         }
 
         if (!warp) {
