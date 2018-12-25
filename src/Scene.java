@@ -48,7 +48,7 @@ class Scene extends JFrame {
         ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_r_normal.png");
         ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_r_focus.png");
 
-        arrowButton.setBounds(getWidth() - 300, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
+        arrowButton.setBounds(getWidth() - 250, getHeight() - 220, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
         arrowButton.setIcon(arrowNormalIcon);
         arrowButton.setBorderPainted(false);
         arrowButton.setFocusPainted(false);
@@ -76,7 +76,7 @@ class Scene extends JFrame {
         ImageIcon arrowNormalIcon = new ImageIcon("resource/arrow_l_normal.png");
         ImageIcon arrowFocusIcon = new ImageIcon("resource/arrow_l_focus.png");
 
-        arrowButton.setBounds(50, getHeight() - 250, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
+        arrowButton.setBounds(50, getHeight() - 220, arrowNormalIcon.getIconWidth(), arrowNormalIcon.getIconHeight());
         arrowButton.setIcon(arrowNormalIcon);
         arrowButton.setBorderPainted(false);
         arrowButton.setFocusPainted(false);
