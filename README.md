@@ -5,5 +5,5 @@ By
    - Tanin      Limsiriwong     6013292   EGCO
    - Thammarat  Kowitkanit      6013293   EGCO
    
-</Br>  [GitHub](https://github.com/SMSHKR/EGCO213-Project3-GUI)
+</Br>  [GitHub](https://github.com/SMSHKR/EGCO213-Project-3-GUI-Program)
 </Br>  [Direction](https://drive.google.com/file/d/163J4VBSfxDnlbhWd7cTOaj0Dn-2pG_FE)
